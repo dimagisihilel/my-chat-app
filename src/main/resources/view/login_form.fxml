@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="root" prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mychatapp.controller.LoginFormController">
    <children>
       <ImageView fitHeight="350.0" fitWidth="400.0">
@@ -16,8 +15,8 @@
             <Image url="@../icon/lightblue.jpeg" />
          </image>
       </ImageView>
-      <TextField layoutX="26.0" layoutY="199.0" prefHeight="38.0" prefWidth="267.0" promptText="Enter your Name" />
-      <Button fx:id="blnLogin" layoutX="310.0" layoutY="199.0" mnemonicParsing="false" onAction="#blnLoginOnAction" prefHeight="38.0" prefWidth="62.0" style="-fx-background-color: blue;" text="Login" textFill="#fffefe">
+      <TextField fx:id="txtName" layoutX="26.0" layoutY="199.0" prefHeight="38.0" prefWidth="267.0" promptText="Enter your Name" />
+      <Button fx:id="btnLogin" layoutX="310.0" layoutY="199.0" mnemonicParsing="false" onAction="#btnLoginOnAction" prefHeight="38.0" prefWidth="62.0" style="-fx-background-color: blue;" text="Login" textFill="#fffefe">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>

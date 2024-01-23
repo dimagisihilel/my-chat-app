@@ -11,7 +11,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane fx:id="pane" prefHeight="450.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.mychatapp.controller.ClientFormController">
    <children>
       <ImageView fitHeight="450.0" fitWidth="550.0">
@@ -19,7 +18,7 @@
             <Image url="@../icon/chatbgcoloured.jpeg" />
          </image>
       </ImageView>
-      <TextField layoutX="15.0" layoutY="385.0" prefHeight="39.0" prefWidth="360.0" />
+      <TextField fx:id="txtMsg" layoutX="15.0" layoutY="385.0" prefHeight="39.0" prefWidth="360.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="38.0" layoutX="375.0" layoutY="386.0" stroke="#fff8f8" strokeType="INSIDE" width="158.0" />
       <ImageView fitHeight="24.0" fitWidth="24.0" layoutX="385.0" layoutY="393.0">
          <image>
@@ -36,7 +35,7 @@
             <Image url="@../icon/send.png" />
          </image>
       </ImageView>
-      <Label layoutX="235.0" layoutY="14.0" prefHeight="23.0" prefWidth="90.0" text="client" textFill="#f3ff13">
+      <Label fx:id="txtLable" layoutX="235.0" layoutY="14.0" prefHeight="23.0" prefWidth="90.0" textFill="#f3ff13">
          <font>
             <Font name="Arial Bold" size="20.0" />
          </font>
