@@ -18,6 +18,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+import lk.ijse.mychatapp.emoji.EmojiPicker;
 import lk.ijse.mychatapp.server.Server;
 
 import java.io.DataInputStream;
@@ -40,7 +41,7 @@ public class ClientFormController {
     private Socket socket;
     private DataInputStream dataInputStream;
     private DataOutputStream dataOutputStream;
-    private String clientName = "";
+    private String clientName = "client";
     private Server server;
     public void initialize(){
         txtLable.setText(clientName);
@@ -84,7 +85,37 @@ public class ClientFormController {
     }
 
     private void emoji() {
+        // Create the EmojiPicker
+        EmojiPicker emojiPicker = new EmojiPicker();
 
+        VBox vBox = new VBox(emojiPicker);
+        vBox.setPrefSize(150,300);
+        vBox.setLayoutX(400);
+        vBox.setLayoutY(95);
+        vBox.setStyle("-fx-font-size: 30");
+
+        pane.getChildren().add(vBox);
+
+        // Set the emoji picker as hidden initially
+        emojiPicker.setVisible(false);
+
+        // Show the emoji picker when the button is clicked
+        btnEmoji.setOnAction(event -> {
+            if (emojiPicker.isVisible()){
+                emojiPicker.setVisible(false);
+            }else {
+                emojiPicker.setVisible(true);
+            }
+        });
+
+        // Set the selected emoji from the picker to the text field
+        emojiPicker.getEmojiListView().setOnMouseClicked(event -> {
+            String selectedEmoji = emojiPicker.getEmojiListView().getSelectionModel().getSelectedItem();
+            if (selectedEmoji != null) {
+                txtMsg.setText(txtMsg.getText()+selectedEmoji);
+            }
+            emojiPicker.setVisible(false);
+        });
     }
 
     public void btnSendOnAction(ActionEvent actionEvent) {
@@ -197,6 +228,7 @@ public class ClientFormController {
     }
 
     public void btnEmojiOnAction(ActionEvent actionEvent) {
+       // emoji();
     }
 
 
